@@ -1,0 +1,23 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/bmizerany/lpx",
+			"repository": "https://github.com/bmizerany/lpx",
+			"revision": "af85cf24c1567bcb5a2e4c21597cc049eab31f55",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/constabulary/gb",
+			"repository": "https://github.com/constabulary/gb",
+			"revision": "d4f8e79d34e93d18fb16b54e041516f77c4471b7",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/docopt/docopt-go",
+			"repository": "https://github.com/docopt/docopt-go",
+			"revision": "854c423c810880e30b9fecdabb12d54f4a92f9bb",
+			"branch": "master"
+		}
+	]
+}
