@@ -97,7 +97,8 @@ Options:
 	go receiveLogs()
 
 	http.HandleFunc("/logs", routeLogs)
-	http.HandleFunc("/", mainPage)
+	staticFs := http.FileServer(http.Dir("static"))
+	http.Handle("/", staticFs)
 	err = http.ListenAndServe(addr, nil)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "http server failure: %v\n", err)

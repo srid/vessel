@@ -1,1 +1,1 @@
-web: bin/vessel -p ${PORT}
+web: bin/server -p ${PORT}

@@ -20,7 +20,9 @@ git push heroku master
 
 ## TODO
 
+- [X] Deploy Go server to Heroku
 - [ ] End to end Go-Elm hello world
+  - [ ] With multibuildpack
 - [ ] Get plain logs to Elm
 - [ ] Per app
 - [ ] Analyze in real-time
