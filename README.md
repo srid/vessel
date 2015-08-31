@@ -13,6 +13,7 @@ Pushing to heroku:
 
 ```
 heroku create
+heroku buildpacks:set https://github.com/ddollar/heroku-buildpack-multi.git
 heroku buildpacks:set https://github.com/paxan/heroku-buildpack-gb.git
 heroku config:set GOVERSION=1.5
 git push heroku master
