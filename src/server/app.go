@@ -59,10 +59,16 @@ func handleLog(line *LogLine) error {
 	return err
 }
 
-func routeLogs(w http.ResponseWriter, r *http.Request) {
-	lp := lpx.NewReader(bufio.NewReader(r.Body))
-	for lp.Next() {
-		logsCh <- NewLogLineFromLpx(lp)
+func handlerLogs(w http.ResponseWriter, r *http.Request) {
+	switch {
+	case r.Method == "POST":
+		// Handle logplex frames
+		lp := lpx.NewReader(bufio.NewReader(r.Body))
+		for lp.Next() {
+			logsCh <- NewLogLineFromLpx(lp)
+		}
+	case r.Method == "GET":
+		// Stream received logs back to the client
 	}
 }
 
@@ -96,7 +102,7 @@ Options:
 	logsCh = make(chan *LogLine, LOGSCH_BUFFER)
 	go receiveLogs()
 
-	http.HandleFunc("/logs", routeLogs)
+	http.HandleFunc("/logs", handlerLogs)
 	staticFs := http.FileServer(http.Dir("static"))
 	http.Handle("/", staticFs)
 	err = http.ListenAndServe(addr, nil)

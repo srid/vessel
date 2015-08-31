@@ -1,6 +1,6 @@
 {
     "name": "Vessel",
-    "repository": "https://github.com/heroku/vessel",
+    "repository": "https://github.com/srid/vessel",
     "env": {
         "ELM_COMPILE": "make client",
         "ELM_STATIC_DIR": "."

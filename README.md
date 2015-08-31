@@ -1,20 +1,16 @@
 # vessel
 
-A tidy vessel for your spews.
+A tidy vessel for your [spews][https://github.com/heroku/spew].
 
-## Work in progress
+## Getting started
 
-```
-go get github.com/constabulary/gb/...
-make
-```
+For local development install Elm and [gb](https://github.com/constabulary/gb) followed by running `make`.
 
-Pushing to heroku:
+For deploying to Heroku:
 
 ```
 heroku create
 heroku buildpacks:set https://github.com/ddollar/heroku-buildpack-multi.git
-heroku buildpacks:set https://github.com/paxan/heroku-buildpack-gb.git
 heroku config:set GOVERSION=1.5
 git push heroku master
 ```
@@ -22,8 +18,9 @@ git push heroku master
 ## TODO
 
 - [X] Deploy Go server to Heroku
-- [ ] End to end Go-Elm hello world
-  - [ ] With multibuildpack
-- [ ] Get plain logs to Elm
+- [X] End to end Go-Elm hello world
+  - [X] With multibuildpack
+- [ ] Stream plain logs to Elm
+  - [ ] Broadcast channel and websocket abstraction
 - [ ] Per app
 - [ ] Analyze in real-time
